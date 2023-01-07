@@ -1,0 +1,12 @@
+.app {
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    background-color: gray;
+    padding: 1rem;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+}

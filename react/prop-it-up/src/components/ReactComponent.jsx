@@ -16,10 +16,10 @@ class ReactComponent extends Component {
         const {firstName, lastName, age, hairColor} = this.props;
         return (
             <div>
-                <h1>{ this.props.lastName }, { this.props.firstName }</h1>
+                <h1>{ lastName }, { this.props.firstName }</h1>
                 <p>Age: { this.state.age }</p>
-                <p>Hair Color: { this.props.hairColor }</p>
-                <button onClick={this.incAge}>Birthday button for { this.props.firstName} { this.props.lastName }</button>
+                <p>Hair Color: { hairColor }</p>
+                <button onClick={this.incAge}>Birthday button for { firstName} { lastName }</button>
             </div>
         );
     }
