@@ -19,7 +19,7 @@ const Form = (props) => {
 
     const handleFirstName = (e) => {
         setFirstName(e.target.value);
-        if (e.target.value.length < 3 && e.target.value.length != 0) {
+        if (e.target.value.length < 3 && e.target.value.length !== 0) {
             setFirstNameError("First Name must be at least 2 characters long");
         } else {
             setFirstNameError("");
@@ -28,7 +28,7 @@ const Form = (props) => {
 
     const handleLastName = (e) => {
         setLastName(e.target.value);
-        if (e.target.value.length < 3 && e.target.value.length != 0) {
+        if (e.target.value.length < 3 && e.target.value.length !== 0) {
             setLastNameError("Last Name must be at least 2 characters long")
         } else {
             setLastNameError("");
@@ -37,7 +37,7 @@ const Form = (props) => {
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
-        if (e.target.value.length < 3 && e.target.value.length != 0) {
+        if (e.target.value.length < 3 && e.target.value.length !== 0) {
             setEmailError("Email must be at least 2 characters long")
         } else {
             setEmailError("")
@@ -46,7 +46,7 @@ const Form = (props) => {
 
     const handlePassword = (e) => {
         setPassword(e.target.value)
-        if (e.target.value.length < 8 && e.target.value.length != 0) {
+        if (e.target.value.length < 8 && e.target.value.length !== 0) {
             setPasswordError("Password must be at least 8 characters long")
         } else {
             setPasswordError("")
@@ -55,12 +55,12 @@ const Form = (props) => {
 
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value)
-        if (e.target.value != password && e.target.value.length != 0) {
+        if (e.target.value !== password && e.target.value.length !== 0) {
             setConfirmPasswordMatch("Passwords do not match")
         } else {
             setConfirmPasswordMatch("")
         }
-        if (e.target.value.length < 8 && e.target.value.length != 0) {
+        if (e.target.value.length < 8 && e.target.value.length !== 0) {
             setConfirmPasswordError("Confirm Password must be at least 8 characters long")
         } else {
             setConfirmPasswordError("")
