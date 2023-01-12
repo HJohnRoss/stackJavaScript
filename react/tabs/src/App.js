@@ -4,7 +4,7 @@ import Content from './components/Content'
 
 function App() {
     const [tab, setTab] = useState("")
-    const [tabSize, setTabSize] = useState(["tab 1", "tab 2", "tab 3"])
+    const [tabSize] = useState(["tab 1", "tab 2", "tab 3"])
     return (
         <div>
             <Tabs setTab={setTab} tabSize={tabSize}/>
