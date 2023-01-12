@@ -1,18 +1,12 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import axiose from 'axios'
 
 const Poke = (props) => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=807&offset=0")
-        .then(response => {
-            // not the actual JSON response body but the entire HTTP response
-            return response.json();
-        }).then(response => {
-            // we now run another promise to parse the HTTP response into usable JSON
+    useEffect(() => {
+        axiose.get('https://pokeapi.co/api/v2/pokemon?limit=807&offset=0')
+            .then(response => { props.setAllPokemon(response.data.results) })
+    }, [])
 
-            props.setAllPokemon(response.results)
-        }).catch(err => {
-        })
-    
     const showPokemon = (e) => {
         e.preventDefault();
         if (props.showPoke === false) {
@@ -20,7 +14,6 @@ const Poke = (props) => {
         } else {
             props.setShowPoke(false);
         }
-        console.log(props.showPoke)
     }
 
 
@@ -32,9 +25,9 @@ const Poke = (props) => {
                     <div>
                         {
                             props.allPokemon.map((item, i) =>
-                                <div key={i}>
-                                    <p>{item.name}</p>
-                                </div>
+                                <ul key={i}>
+                                    <li>{item.name}</li>
+                                </ul>
                             )
                         }
                     </div> : ""
