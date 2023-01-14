@@ -14,7 +14,7 @@ function App() {
         <>
             <Form unit={unit} setUnit={setUnit} oneId={oneId} setOneId={setOneId} />
             <Routes>
-                <Route path="/:category/:id" element={<Api unit={unit} setUnit={setUnit} oneId={oneId} setOneId={setOneId} />} />
+                <Route path="/:category/:id" element={<Api unit={unit} setUnit={setUnit} oneId={oneId} setOneId={setOneId}/>} />
             </Routes>
         </>
     );

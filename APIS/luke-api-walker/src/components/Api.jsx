@@ -15,17 +15,16 @@ const Api = (props) => {
                 setData(arr);
                 console.log(arr)
             })
-
     }, [category, id])
     return (
         <>
             {
-                data ?
+                data &&
                     data.map((item, i) =>
                         <div key={i}>
                             <p>{item[0]} : {item[1]}</p>
                         </div>
-                    ) : ''
+                    )
             }
         </>
     )
