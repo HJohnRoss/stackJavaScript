@@ -20,7 +20,7 @@ const Form = (props) => {
         <>
             <form onSubmit={sendCall}>
                 <label htmlFor="">Search for: </label>
-                <select name="" id="" onClick={handleUnit}>
+                <select onClick={handleUnit}>
                     <option value="people">people</option>
                     <option value="planets">planets</option>
                     <option value="films">films</option>
