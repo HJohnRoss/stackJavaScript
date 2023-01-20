@@ -1,15 +1,27 @@
 const { Person } = require('../models/person.model')
 
 module.exports.index = (req, res) => {
-  res.json({message: "hello world"})
+  res.json({ message: "hello world" })
 }
 
 module.exports.createPerson = (request, response) => {
   const { firstName, lastName } = request.body;
   Person.create({
-      firstName,
-      lastName
+    firstName,
+    lastName
   })
+    .then(person => response.json(person))
+    .catch(err => response.json(err));
+}
+
+module.exports.getAllPeople = (request, response) => {
+  Person.find({})
+    .then(persons => response.json(persons))
+    .catch(err => response.json(err))
+}
+
+module.exports.getPerson = (request, response) => {
+  Person.findOne({_id:request.params.id})
       .then(person => response.json(person))
-      .catch(err => response.json(err));
+      .catch(err => response.json(err))
 }
