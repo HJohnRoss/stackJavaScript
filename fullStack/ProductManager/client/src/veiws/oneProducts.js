@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from 'axios'
 
 export default () => {
@@ -17,6 +17,7 @@ export default () => {
       <h1>{data.title}</h1>
       <p>Price: ${data.price}</p>
       <p>Description: {data.description}</p>
+      <Link to={`/product/edit/${id}`}><button>edit</button></Link>
     </>
   )
 }
