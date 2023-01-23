@@ -55,8 +55,8 @@ const Form = (props) => {
         <label>Name: </label>
         <input type="text" onChange={e => props.setName(e.target.value)} value={props.name} />
       </div>
-      <Link to="/"><button>Cancel</button></Link>
       <button>Submit</button>
+      <Link to="/"><button>Cancel</button></Link>
     </form>
   )
 }

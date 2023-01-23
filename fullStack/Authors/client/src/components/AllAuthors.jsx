@@ -9,12 +9,12 @@ const allAuthors = (props) => {
   return (
     <>
       <table>
-        <tbody>
+        <thead>
           <tr>
             <th>Author</th>
             <th>Actions available</th>
           </tr>
-        </tbody>
+        </thead>
         {
           props.allAuthors.map((author, i) =>
             <tbody key={i}>
