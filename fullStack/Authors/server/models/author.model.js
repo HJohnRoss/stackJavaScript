@@ -12,6 +12,6 @@ const AuthorSchema = new mongoose.Schema({
         "Author must be 3 characters long"
       ]
   }
-})
+}, { timestamps: true })
 
 module.exports.Author = mongoose.model('Author', AuthorSchema)
