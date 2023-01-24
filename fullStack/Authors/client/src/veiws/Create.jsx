@@ -11,7 +11,7 @@ const Create = (props) => {
       <h1>Favorite authors</h1>
       <Link to="/">Home</Link>
       <h2>Add a new author:</h2>
-      <Form create={true} name={name} setName={setName}/>
+      <Form isCreate={true} name={name} setName={setName}/>
     </>
   )
 }

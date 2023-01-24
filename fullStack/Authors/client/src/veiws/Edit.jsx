@@ -21,7 +21,7 @@ const Edit = (props) => {
       <h1>Favorite authors</h1>
       <Link to="/">Home</Link>
       <h2>Edit this author</h2>
-      <Form create={false} id={id} name={name} setName={setName} />
+      <Form isCreate={false} id={id} name={name} setName={setName} />
     </>
   )
 }

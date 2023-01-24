@@ -7,12 +7,11 @@ const Form = (props) => {
   const navigate = useNavigate()
 
   const [errors, setErrors] = useState([])
-  let name = props.name
 
   const handleSubmit = e => {
     e.preventDefault()
     axios.post('http://localhost:8000/api/createAuthor', {
-      name
+      name : props.name
     })
     .then(res => {
       console.log(res)
@@ -31,7 +30,7 @@ const Form = (props) => {
   const handleEdit = e => {
     e.preventDefault()
     axios.put(`http://localhost:8000/api/editAuthor/${props.id}`, {
-      name
+      name : props.name
     })
       .then(res => {
         console.log(res)
@@ -47,7 +46,7 @@ const Form = (props) => {
       })
   }
   return (
-    <form onSubmit={ props.create === true ? handleSubmit : handleEdit}>
+    <form onSubmit={ props.isCreate ? handleSubmit : handleEdit}>
       {
         errors.map((err, i) => <p key={i}>{err}</p>)
       }
