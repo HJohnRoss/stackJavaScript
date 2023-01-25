@@ -87,9 +87,9 @@ const expected = ["Person One", "Person Three"];
 function coronaVirusAtRisk(persons) {
   let results = []
   for (let i = 0; i < persons.length; i++) {
-    if (persons[i].isSocialDistancing === false) {
+    if (!persons[i].isSocialDistancing) {
       for (let j = 0; j < persons[i].friends.length; j++) {
-        if (persons[i].friends[j].hasCovid === true && persons[i].friends[j].isSocialDistancing === false) {
+        if (persons[i].friends[j].hasCovid && !persons[i].friends[j].isSocialDistancing) {
           results.push(`${persons[i].firstName} ${persons[i].lastName}`)
           break
         }
@@ -103,7 +103,7 @@ function coronaVirusAtRisk(persons) {
 
 function coronaVirusAtRisk1(persons) {
   return persons.filter(person => {
-    return person.isSocialDistancing === false && person.friends.findIndex(friend => { return friend.isSocialDistancing === false && friend.hasCovid === true }) > -1
+    return !person.isSocialDistancing && person.friends.findIndex(friend => { return !friend.isSocialDistancing && friend.hasCovid }) > -1
   }).map((person, i) => {
     return `${person.firstName} ${person.lastName}`
   })
