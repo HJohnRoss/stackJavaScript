@@ -102,7 +102,7 @@ function coronaVirusAtRisk(persons) {
 // console.log(coronaVirusAtRisk(people))
 
 function coronaVirusAtRisk1(persons) {
-  return persons.filter(person => {
+  return persons.filter(person => {                                   
     return !person.isSocialDistancing && person.friends.findIndex(friend => { return !friend.isSocialDistancing && friend.hasCovid }) > -1
   }).map((person, i) => {
     return `${person.firstName} ${person.lastName}`
